@@ -7,41 +7,59 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
 # ===============================
 # 👉 SERVIR ARCHIVOS ESTÁTICOS
 # ===============================
-
 @app.route("/otrapagina/<path:filename>")
 def otrapagina_static(filename):
-    return send_from_directory(os.path.join(BASE_DIR, "otrapagina"), filename)
+    return send_from_directory(
+        os.path.join(BASE_DIR, "otrapagina"),
+        filename
+    )
 
 @app.route("/pages/<path:filename>")
 def pages_static(filename):
-    return send_from_directory(os.path.join(BASE_DIR, "pages"), filename)
+    return send_from_directory(
+        os.path.join(BASE_DIR, "pages"),
+        filename
+    )
 
 # ===============================
 # 👉 RUTAS HTML
 # ===============================
-
 @app.route("/")
 def home():
-    return send_from_directory("otrapagina", "index.html")
+    return send_from_directory(
+        os.path.join(BASE_DIR, "otrapagina"),
+        "index.html"
+    )
 
 @app.route("/contacto")
 def contacto():
-    return send_from_directory("pages", "contacto.html")
+    return send_from_directory(
+        os.path.join(BASE_DIR, "pages"),
+        "contacto.html"
+    )
 
 @app.route("/servicios")
 def servicios():
-    return send_from_directory("pages", "servicios.html")
+    return send_from_directory(
+        os.path.join(BASE_DIR, "pages"),
+        "servicios.html"
+    )
 
 @app.route("/sobremi")
 def sobremi():
-    return send_from_directory("pages", "sobremi.html")
+    return send_from_directory(
+        os.path.join(BASE_DIR, "pages"),
+        "sobremi.html"
+    )
+
 
 # ===============================
 # 👉 ENVÍO DE FORMULARIO
