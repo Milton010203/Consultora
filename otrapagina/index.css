@@ -379,68 +379,6 @@ body.page-loaded {
     width: 70px;
   }
 }
-/* ===============================
-   MENU HAMBURGUESA MOBILE
-   =============================== */
-
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 32px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 2000;
-  }
-
-  .menu-toggle span {
-    width: 100%;
-    height: 3px;
-    background: #000;
-    transition: all 0.3s ease;
-  }
-
-  .nav {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-
-    /* 🔑 CLAVE */
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    pointer-events: none;
-  }
-
-  .nav.active {
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-
-  /* Animación hamburguesa → X */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-}
 
 /* ==========================
    MOBILE
@@ -521,5 +459,80 @@ body.page-loaded {
     .herotitulos {
       font-size: 1rem;
     }
+}
+
+/* ===============================
+   MENU HAMBURGUESA — FIX DEFINITIVO
+   =============================== */
+
+@media (max-width: 768px) {
+
+  header {
+    position: relative;
+    z-index: 3000;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 4000;
+  }
+
+  .menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+
+  /* NAV MOBILE */
+  .nav {
+    position: fixed;
+    top: 64px;
+    right: 0;
+
+    width: 100vw;
+    height: calc(100vh - 64px);
+
+    background: #111; /* el panel oscuro que ves */
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    transform: translateX(100%);
+    transition: transform .35s ease;
+
+    z-index: 3500;
+
+    pointer-events: none;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Animación hamburguesa → X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }
 
