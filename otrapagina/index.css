@@ -380,6 +380,7 @@ body.page-loaded {
   }
 }
 
+
 /* ==========================
    MOBILE
    ========================== */
@@ -461,68 +462,66 @@ body.page-loaded {
     }
 }
 
-/* ===============================
-   MENU HAMBURGUESA — FIX DEFINITIVO
-   =============================== */
+/* ==========================
+   MENU HAMBURGUESA
+   ========================== */
 
+/* BOTÓN */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* DESKTOP */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-
-  header {
-    position: relative;
-    z-index: 3000;
-  }
 
   .menu-toggle {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 32px;
-    height: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 4000;
+    z-index: 3000;
   }
 
-  .menu-toggle span {
-    width: 100%;
-    height: 3px;
-    background: #000;
-    transition: transform .3s ease, opacity .3s ease;
-  }
-
-  /* NAV MOBILE */
   .nav {
     position: fixed;
     top: 64px;
     right: 0;
-
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 64px);
-
-    background: #111; /* el panel oscuro que ves */
-    color: #fff;
-
-    display: flex;
+    background: #14161b;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 30px;
 
+    /* estado oculto */
     transform: translateX(100%);
-    transition: transform .35s ease;
-
-    z-index: 3500;
-
-    pointer-events: none;
+    transition: transform 0.3s ease;
+    z-index: 2500;
   }
 
   .nav.active {
     transform: translateX(0);
-    pointer-events: auto;
   }
 
-  /* Animación hamburguesa → X */
+  /* animación X */
   .menu-toggle.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
@@ -536,57 +535,7 @@ body.page-loaded {
   }
 }
 
-/* ===== FIX CLICK HAMBURGUESA ===== */
 
-.menu-toggle {
-  position: relative;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
-}
 
-header,
-.topbar {
-  z-index: 5000;
-}
-
-/* Evita capas invisibles bloqueando clicks */
-header::before,
-header::after,
-main::before,
-main::after {
-  pointer-events: none !important;
-}
-
-/* ===== DESKTOP: DESACTIVAR MENU MOBILE ===== */
-
-.nav {
-  position: static;
-  transform: none;
-  width: auto;
-  height: auto;
-  background: transparent;
-  pointer-events: auto;
-}
-
-@media (max-width: 768px) {
-
-  .nav {
-    position: fixed;
-    top: 64px;
-    right: 0;
-    width: 100vw;
-    height: calc(100vh - 64px);
-    background: #111;
-    transform: translateX(100%);
-    transition: transform .35s ease;
-    pointer-events: none;
-    z-index: 9000;
-  }
-
-  .nav.active {
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-}
 
 

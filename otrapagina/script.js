@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     MENU HAMBURGUESA (SIEMPRE)
-     =============================== */
+  /* MENU HAMBURGUESA */
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
-      console.log("MENU CLICK"); // 👈 SOLO DEBUG
       toggle.classList.toggle("active");
       nav.classList.toggle("active");
     });
@@ -20,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+});
+
 
   /* ===============================
      ONE PAGE SCROLL — SOLO DESKTOP
@@ -81,6 +81,3 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollToSection(currentSection - 1);
     }
   }, { passive: false });
-
-});
-``
