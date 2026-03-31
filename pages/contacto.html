@@ -34,12 +34,28 @@
           <p class="muted">Contanos sobre tu proyecto. Respondemos en 24–48 h.</p>
         </div>
         <div class="contact__form">
-          <form action="/enviar" method="post">
-            <input type="text" name="nombre" required />
-            <input type="email" name="email" required />
-            <input type="text" name="empresa" />
-            <textarea name="mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+          <form action="/enviar" method="post" class="form" aria-label="Formulario de contacto">
+            <div class="form__row">
+              <div class="form__field">
+                <label for="name">Nombre y Apellido</label>
+                    <input id="name" name="nombre" type="text" required>
+              </div>
+              <div class="form__field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="company">Empresa</label>
+              <input id="company" name="empresa" type="text">
+            </div>
+            <div class="form__field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="mensaje" rows="6" required></textarea>
+            </div>
+            <div class="form__actions">
+              <button class="btn primary" type="submit">Enviar</button>
+            </div>
           </form>
         </div>
       </div>

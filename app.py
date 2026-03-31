@@ -99,7 +99,7 @@ Mensaje:
         print("✅ Mail enviado con SendGrid")
         print(response.status_code)
 
-        return redirect("/contacto" + "Mail enviado correctamente")
+        return redirect("/contacto")
 
     except Exception as e:
         print("❌ Error SendGrid:", e)
