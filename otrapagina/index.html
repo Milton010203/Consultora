@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio — Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="container">
+      <div ><a class="brand" href="#inicio" data-index="0" aria-label="Ir al inicio"><img class="navimg"src="./resources/7338525d-16fd-4692-8bcc-b1c27e33fc74.png" alt=""></a></div>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a class="ct1" href="#inicio" data-index="0">Inicio</a>
+        <a class="ct1" href="#sobre">Estudio</a>
+        <a class="ct1" href="../pages/servicios.html">Servicios</a>
+        <a class="cta" href="../pages/contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="section1 hero fade-in visible" style="color: #3b3b3b;"aria-label="Sección inicio">
+      <div class=" hero-top ">
+        <h1 class="h1 heroerotop1 hero-content">CONSULTORIA EN SEGURIDAD</h1>
+        <p class="herotitulos">
+          Lic. Mario alvarez
+        </p>
+      </div>
+      <div class= "hero-bottom">
+        <p class="lead">Creamos soluciones a medida</p>
+        <p>
+          Acompaño a las organizaciones en la construcción y evolución hacia una cultura de seguridad sólida, integrando procesos y personas, fortalenciendo el liderazgo cercano para lograr entornos de trabajo más seguros, eficientes y sostenibles, en la búsqueda de resultados  alineados a los objetivos estratégicos del negocio.​
+        </p>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">Deslizá</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre" class="section fade-in backgroundd" aria-label="Sección sobre el estudio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="h2">Lic. Mario Alvarez</h2>
+          <p>Consultor y Asesor Independiente en Seguridad, Salud Ocupacional, Gestión Ambiental y Transformación Cultural.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3 class="h4">Estrategia</h3>
+            <p>Investigación, benchmarking y definición de objetivos para alinear negocio, marca y experiencia.</p>
+          </div>
+          <div class="card">
+            <h3 class="h4">Diseño</h3>
+            <p>Identidad visual, sitios web y piezas de comunicación con foco en claridad y performance.</p>
+          </div>
+          <div class="card">
+            <h3 class="h4">Desarrollo</h3>
+            <p>Implementaciones robustas y escalables, optimizadas para SEO, accesibilidad y velocidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicios" class="section section-alt fade-in " aria-label="Sección servicios">
+      <div class="container seccionletraoscura">
+        <div class="section-header ">
+          <h2 class="h2">Qué hacemos</h2>
+          <p class="muted">Servicios flexibles según la necesidad de cada proyecto.</p>
+        </div>
+        <div class="grid grid-2">
+          <ul class="list highlight">
+            <li>Branding & identidad</li>
+            <li>Diseño UX/UI</li>
+            <li>Web corporativa</li>
+            <li>E‑commerce</li>
+            <li>Landing pages</li>
+          </ul>
+          <ul class="list highlight">
+            <li>SEO técnico</li>
+            <li>Analítica & CRO</li>
+            <li>Gestión de contenido</li>
+            <li>Email marketing</li>
+            <li>Soporte y mantenimiento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+  </main>
+  <script src="script.js" defer></script>
+  <script>
+    // Enlaza la navegación y los CTA con el scroll por secciones del script.js
+    document.addEventListener('DOMContentLoaded', function () {
+      const linkHandler = (e) => {
+        const index = e.currentTarget.getAttribute('data-index');
+      
+        if (index !== null) {
+          e.preventDefault();
+          const i = parseInt(index, 10);
+          if (!isNaN(i) && typeof window.scrollTo === 'function' && typeof window.scrollTo === 'function') {
+            scrollToSection(i);
+          }
+        }
+      };
+
+      document.querySelectorAll('[data-index]').forEach(a => a.addEventListener('click', linkHandler));
+
+      // Maneja hash inicial (por ejemplo, #contacto)
+      const hashMap = { '#inicio': 0, '#sobre': 1, '#servicios': 2, '#contacto': 3 };
+      if (hashMap[location.hash] !== undefined) {
+        setTimeout(() => scrollToSection(hashMap[location.hash]), 150);
+      }
+
+      // Año dinámico en el footer
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  requestAnimationFrame(() => {
+    document.body.classList.add("page-loaded");
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio — Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../otrapagina/index.css" />
+</head>
+<body style="padding-top: 64px;">
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="container">
+      <div ><a class="brand" href="#inicio" data-index="0" aria-label="Ir al inicio"><img class="navimg"src="../otrapagina/resources/7338525d-16fd-4692-8bcc-b1c27e33fc74.png" alt=""></a></div>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a class="ct1" href="../otrapagina/index.html" data-index="0">Inicio</a>
+        <a class="ct1" href="#sobre">Estudio</a>
+        <a class="ct1" href="../pages/servicios.html">Servicios</a>
+        <a class="cta" href="./contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <section id="contacto" class="section contact backgroundd2" aria-label="Sección contacto">
+      <div class="container contact__inner">
+        <div class="contact__info">
+          <h2 class="h2">Contacto</h2>
+          <p class="muted">Contanos sobre tu proyecto. Respondemos en 24–48 h.</p>
+        </div>
+        <div class="contact__form">
+          <form action="/enviar" method="post" class="form" aria-label="Formulario de contacto">
+            <div class="form__row">
+              <div class="form__field">
+                <label for="name">Nombre y Apellido</label>
+                    <input id="name" name="nombre" type="text" required>
+              </div>
+              <div class="form__field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="company">Empresa</label>
+              <input id="company" name="empresa" type="text">
+            </div>
+            <div class="form__field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="mensaje" rows="6" required></textarea>
+            </div>
+            <div class="form__actions">
+              <button class="btn primary" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="../otrapagina/servicios.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    requestAnimationFrame(() => {
+        document.body.classList.add("page-loaded");
+        });
+    });
+  </script>
+</body>
