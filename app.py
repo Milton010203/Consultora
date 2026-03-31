@@ -81,7 +81,7 @@ Mensaje:
         print("✅ Mail enviado con SendGrid")
         print(response.status_code)
 
-        return redirect("/contacto")
+        return redirect("/contacto" + "Mail enviado correctamente")
 
     except Exception as e:
         print("❌ Error SendGrid:", e)
@@ -92,6 +92,6 @@ Mensaje:
 # ===============================
 # 👉 INICIAR SERVIDOR
 # ===============================
-
+app = Flask(__name__)
 if __name__ == "__main__":
     app.run(debug=True)
