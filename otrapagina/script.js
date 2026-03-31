@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
+      console.log("MENU CLICK"); // 👈 SOLO DEBUG
       toggle.classList.toggle("active");
       nav.classList.toggle("active");
     });

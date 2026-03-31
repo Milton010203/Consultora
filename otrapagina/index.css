@@ -536,3 +536,57 @@ body.page-loaded {
   }
 }
 
+/* ===== FIX CLICK HAMBURGUESA ===== */
+
+.menu-toggle {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+header,
+.topbar {
+  z-index: 5000;
+}
+
+/* Evita capas invisibles bloqueando clicks */
+header::before,
+header::after,
+main::before,
+main::after {
+  pointer-events: none !important;
+}
+
+/* ===== DESKTOP: DESACTIVAR MENU MOBILE ===== */
+
+.nav {
+  position: static;
+  transform: none;
+  width: auto;
+  height: auto;
+  background: transparent;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+
+  .nav {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background: #111;
+    transform: translateX(100%);
+    transition: transform .35s ease;
+    pointer-events: none;
+    z-index: 9000;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+
