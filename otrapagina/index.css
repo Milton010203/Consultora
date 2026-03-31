@@ -28,7 +28,6 @@ body {
   color: var(--textlight);
   background: var(--bg);
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .container {
@@ -182,10 +181,7 @@ nav a:hover::after {
   background-position: center;     /* Clave */
   background-repeat: no-repeat;
   
-  
-  overflow-x: hidden;
-  overflow-y: auto;
-
+  overflow: hidden;
 }
 
 
@@ -383,37 +379,67 @@ body.page-loaded {
     width: 70px;
   }
 }
-/* ==========================
-   HAMBURGUESA
-   ========================== */
+/* ===============================
+   MENU HAMBURGUESA MOBILE
+   =============================== */
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-}
+@media (max-width: 768px) {
 
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--textlight);
-  border-radius: 2px;
-  transition: 0.3s;
-}
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+  }
 
-/* Animación a X */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  .menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+
+  .nav {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    /* 🔑 CLAVE */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Animación hamburguesa → X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }
 
 /* ==========================
