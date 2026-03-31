@@ -104,12 +104,3 @@ Mensaje:
     except Exception as e:
         print("❌ Error SendGrid:", e)
         return "Error enviando el mail"
-
-
-
-# ===============================
-# 👉 INICIAR SERVIDOR
-# ===============================
-app = Flask(__name__)
-if __name__ == "__main__":
-    app.run(debug=True)
