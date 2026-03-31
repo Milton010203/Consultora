@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* MENU HAMBURGUESA */
+  /* ===============================
+     MENU HAMBURGUESA
+     =============================== */
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
 
@@ -18,15 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});
-
-
   /* ===============================
      ONE PAGE SCROLL — SOLO DESKTOP
      =============================== */
-
   const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-  if (isTouchDevice) return;
+  if (isTouchDevice) {
+    // ✅ En mobile NO ejecutamos el scroll, pero SIN romper JS
+    return;
+  }
 
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!startTime) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
-
       const ease =
         progress < 0.5
           ? 2 * progress * progress
@@ -65,19 +65,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scrollToSection(index) {
     if (index < 0 || index >= sections.length) return;
-
     isAnimating = true;
     currentSection = index;
     smoothScrollTo(sections[index].offsetTop);
   }
 
-  window.addEventListener("wheel", (e) => {
-    if (isAnimating) return;
-    e.preventDefault();
+  window.addEventListener(
+    "wheel",
+    (e) => {
+      if (isAnimating) return;
+      e.preventDefault();
 
-    if (e.deltaY > 0) {
-      scrollToSection(currentSection + 1);
-    } else {
-      scrollToSection(currentSection - 1);
-    }
-  }, { passive: false });
+      if (e.deltaY > 0) {
+        scrollToSection(currentSection + 1);
+      } else {
+        scrollToSection(currentSection - 1);
+      }
+    },
+    { passive: false }
+  );
+});
