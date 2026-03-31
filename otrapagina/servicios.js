@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggle.addEventListener("click", () => {
     toggle.classList.toggle("active");
-    nav.classList.toggle("active"); // 👈 coincide con el CSS
+    nav.classList.toggle("active");
   });
 
   nav.querySelectorAll("a").forEach(link => {
