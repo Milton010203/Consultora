@@ -28,6 +28,7 @@ body {
   color: var(--textlight);
   background: var(--bg);
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -181,7 +182,10 @@ nav a:hover::after {
   background-position: center;     /* Clave */
   background-repeat: no-repeat;
   
-  overflow: hidden;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 
 
