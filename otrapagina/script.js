@@ -23,24 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      ONE PAGE SCROLL — SOLO DESKTOP
      =============================== */
-  const isDesktopOnly = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  if (!isDesktopOnly) {
-    // En mobile dejamos el scroll natural sin interferir.
+  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+  if (isTouchDevice) {
+    // ✅ En mobile NO ejecutamos el scroll, pero SIN romper JS
     return;
   }
 
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
 
-  const scrollingElement = document.scrollingElement || document.documentElement;
   document.body.style.overflow = "hidden";
-  document.documentElement.style.overflow = "hidden";
 
   let currentSection = 0;
   let isAnimating = false;
 
   function smoothScrollTo(targetY, duration = 800) {
-    const startY = scrollingElement.scrollTop;
+    const startY = window.scrollY;
     const distance = targetY - startY;
     let startTime = null;
 
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? 2 * progress * progress
           : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-      scrollingElement.scrollTop = startY + distance * ease;
+      window.scrollTo(0, startY + distance * ease);
 
       if (timeElapsed < duration) {
         requestAnimationFrame(animation);
@@ -65,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animation);
   }
 
+  
   function scrollToSection(index) {
     if (index < 0 || index >= sections.length) return;
 
@@ -73,8 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const section = sections[index];
     showSection(section);
+
     smoothScrollTo(section.offsetTop);
   }
+
 
   window.addEventListener(
     "wheel",
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   function showSection(section) {
-    if (!section) return;
-    section.classList.add("visible");
-  }
+  if (!section) return;
+  section.classList.add("visible");
+}
 });
