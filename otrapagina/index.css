@@ -254,14 +254,7 @@ nav a:hover::after {
   font-size: 2.5rem;
 }
 
-.hero { position: relative; }
-.hero__inner { padding-top: 36px;
-justify-content: center;
-align-items: center; }
-.hero__copy { max-width: 780px; }
-.actions { display: flex; gap: 14px; margin-top: 18px; }
-.btn {
-  display: inline-flex; align-items: center; j.hero { position: relative; min-height: 10vh;}
+.hero { position: relative; min-height: 10vh;}
 .hero__inner { padding-top: 36px;
 justify-content: center;
 align-items: center; }
@@ -676,8 +669,7 @@ body.page-loaded {
 
   .card_service img {
     width: 48px;
-    height: 48px;;
-  }
+    height: 48px;
   }
 }
 
@@ -688,13 +680,13 @@ html {
 }
 
 /* Notebooks y pantallas con DPI más alto */
-@media (min-resolution: 1.25dppx) {                      
+@media (min-resolution: 1.25dppx) {
   html {
     font-size: 12px;
   }
   p {
-    font-size: 20px
-  };
+    font-size: 20px;
+  }
   .section1 .container{
     padding-bottom: 60px;
   }
@@ -706,8 +698,8 @@ html {
     font-size: 13.5px;
   }
   p {
-    font-size: 20px
-  };
+    font-size: 20px;
+  }
   .section1 .container{
     padding-bottom: 60px;
   }
