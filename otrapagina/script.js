@@ -21,14 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===============================
-     ONE PAGE SCROLL — SOLO DESKTOP
-     =============================== */
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-  if (isTouchDevice) {
-    // ✅ En mobile NO ejecutamos el scroll, pero SIN romper JS
-    return;
-  }
+   ONE PAGE SCROLL — SOLO DESKTOP
+=============================== */
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
+if (!isTouchDevice) {
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
 
@@ -46,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!startTime) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
+
       const ease =
         progress < 0.5
           ? 2 * progress * progress
@@ -63,24 +61,20 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animation);
   }
 
-  
   function scrollToSection(index) {
     if (index < 0 || index >= sections.length) return;
+    if (isAnimating) return;
 
     isAnimating = true;
     currentSection = index;
-
     const section = sections[index];
-    showSection(section);
-
+    section.classList.add("visible");
     smoothScrollTo(section.offsetTop);
   }
-
 
   window.addEventListener(
     "wheel",
     (e) => {
-      if (isAnimating) return;
       e.preventDefault();
 
       if (e.deltaY > 0) {
@@ -91,9 +85,5 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: false }
   );
-
-  function showSection(section) {
-  if (!section) return;
-  section.classList.add("visible");
 }
 });

@@ -593,6 +593,10 @@ body.page-loaded {
    ------------------------- */
 @media (max-width: 1024px) {
 
+  
+  body {
+    overflow-y: auto !important;
+  }
 
   .hero-top {
     padding: 24px;
