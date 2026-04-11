@@ -62,13 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(animation);
   }
-
-  function scrollToSection(index) {
-    if (index < 0 || index >= sections.length) return;
-    isAnimating = true;
-    currentSection = index;
-    smoothScrollTo(sections[index].offsetTop);
+  
+  function showSection(section) {
+    if (!section) return;
+    section.classList.add("visible");
   }
+
+
+  
+function scrollToSection(index) {
+  if (index < 0 || index >= sections.length) return;
+  isAnimating = true;
+  currentSection = index;
+  smoothScrollTo(sections[index].offsetTop);
+}
+
 
   window.addEventListener(
     "wheel",
