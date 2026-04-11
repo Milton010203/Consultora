@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(animation);
   }
+<<<<<<< HEAD
   
   function showSection(section) {
     if (!section) return;
@@ -78,6 +79,23 @@ function scrollToSection(index) {
 }
 
 
+=======
+
+  
+  function scrollToSection(index) {
+    if (index < 0 || index >= sections.length) return;
+
+    isAnimating = true;
+    currentSection = index;
+
+    const section = sections[index];
+    showSection(section);
+
+    smoothScrollTo(section.offsetTop);
+  }
+
+
+>>>>>>> 83e8f16586dc44b2126958dd72e7ace8e64dbf4c
   window.addEventListener(
     "wheel",
     (e) => {
@@ -92,4 +110,9 @@ function scrollToSection(index) {
     },
     { passive: false }
   );
+
+  function showSection(section) {
+  if (!section) return;
+  section.classList.add("visible");
+}
 });

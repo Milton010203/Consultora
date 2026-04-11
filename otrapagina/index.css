@@ -254,7 +254,7 @@ nav a:hover::after {
   font-size: 2.5rem;
 }
 
-.hero { position: relative; }
+.hero { position: relative; min-height: 10vh;}
 .hero__inner { padding-top: 36px;
 justify-content: center;
 align-items: center; }
@@ -377,6 +377,17 @@ body.page-loaded {
 
   .navimg {
     width: 70px;
+  }
+}
+
+
+@media (max-height: 1000px) {
+  .section1 {
+      min-height: 0vh;
+    }
+
+  .hero-top::before {
+    background-color: rgba(255, 255, 255, 0.45);
   }
 }
 
@@ -536,6 +547,160 @@ body.page-loaded {
 }
 
 
+/* =====================================================
+   RESPONSIVE ADAPTATIVO – SIN ROMPER DESKTOP
+   ===================================================== */
+
+/* -------------------------
+   PANTALLAS BAJAS (notebooks)
+   ------------------------- */
+@media (max-height: 900px) {
+
+  .section1,
+  .section {
+    min-height: 90vh;
+  }
+
+  .hero-top::before {
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .hero-bottom {
+    padding: clamp(16px, 4vh, 40px);
+  }
+}
+
+/* -------------------------
+   NOTEBOOKS Y LAPTOPS CHICAS
+   ------------------------- */
+@media (max-width: 1366px) {
+
+  .h1 {
+    font-size: clamp(36px, 5vw, 64px);
+  }
+
+  .hero-bottom {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    width: min(1024px, 92%);
+  }
+}
+
+/* -------------------------
+   TABLETS (vertical)
+   ------------------------- */
+@media (max-width: 1024px) {
 
 
+  .hero-top {
+    padding: 24px;
+  }
 
+  .hero-bottom {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card_service {
+    padding: 18px;
+  }
+}
+
+/* -------------------------
+   MOBILE
+   ------------------------- */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .section1,
+  .section {
+    padding: 80px 0 56px;
+  }
+
+  .h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .hero-top {
+    text-align: center;
+  }
+
+  .hero-bottom {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* -------------------------
+   MOBILE CHICO
+   ------------------------- */
+@media (max-width: 480px) {
+
+  .hero-bottom {
+    font-size: 1rem;
+    padding: 16px;
+  }
+
+  .navimg {
+    width: 64px;
+  }
+
+  .card_service img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* Tamaño base por defecto (monitores estándar) */
+html {
+  font-size: 16px;
+}
+
+/* Notebooks y pantallas con DPI más alto */
+@media (min-resolution: 1.25dppx) {
+  html {
+    font-size: 12px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .section1 .container{
+    padding-bottom: 60px;
+  }
+}
+
+/* Pantallas muy densas (algunas laptops) */
+@media (min-resolution: 1.5dppx) {
+  html {
+    font-size: 13.5px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .section1 .container{
+    padding-bottom: 60px;
+  }
+}
