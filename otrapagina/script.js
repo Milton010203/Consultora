@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      DETECCIÓN RESPONSIVE (CLAVE)
      =============================== */
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = () => window.innerWidth <= 768;
 
   // ✅ En mobile: scroll normal, sin one-page
-  if (isMobile) {
+  if (isMobile()) {
     document.body.style.overflow = "auto";
     document.documentElement.style.overflow = "auto";
     return; // 👈 corta TODO el JS de one-page
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
    ONE PAGE SCROLL — SOLO DESKTOP
 =============================== */
 
-if (!isMobile) {
+if (!isMobile()) {
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
 
