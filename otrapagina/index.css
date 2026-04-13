@@ -717,3 +717,18 @@ html {
     padding-bottom: 60px;
   }
 }
+
+
+@media (max-width: 768px) {
+
+  section {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  main {
+    height: auto !important;
+  }
+
+}
+

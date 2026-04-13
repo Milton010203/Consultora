@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      DETECCIÓN RESPONSIVE (CLAVE)
      =============================== */
-const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   // ✅ En mobile: scroll normal, sin one-page
   if (isMobile) {
