@@ -368,6 +368,15 @@ body.page-loaded {
 }
 
 
+
+html, body {
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+}
+
+
+
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .nav {

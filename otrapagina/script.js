@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
    ONE PAGE SCROLL — SOLO DESKTOP
 =============================== */
-const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-if (!isTouchDevice) {
+if (!isMobile) {
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
 
