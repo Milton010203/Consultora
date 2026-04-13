@@ -546,5 +546,9 @@ html, body {
     height: 48px;
   }
 
+  .fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+  }
 }
 
