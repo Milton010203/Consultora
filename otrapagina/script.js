@@ -1,19 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ===============================
-     DETECCIÓN RESPONSIVE (CLAVE)
-     =============================== */
-  const isMobile = () => window.innerWidth <= 768;
-
-  // ✅ En mobile: scroll normal, sin one-page
-  if (isMobile()) {
-    document.body.style.overflow = "auto";
-    document.documentElement.style.overflow = "auto";
-    return; // 👈 corta TODO el JS de one-page
-  }
-
-
-  /* ===============================
      MENU HAMBURGUESA
      =============================== */
   const toggle = document.querySelector(".menu-toggle");
@@ -36,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
    ONE PAGE SCROLL — SOLO DESKTOP
 =============================== */
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
-if (!isMobile()) {
+if (!isTouchDevice) {
   const sections = document.querySelectorAll("section");
   if (sections.length === 0) return;
 
