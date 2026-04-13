@@ -378,109 +378,7 @@ html, body {
 
 
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
-  .nav {
-    gap: 12px;
-    font-size: 14px;
-  }
 
-  .navimg {
-    width: 70px;
-  }
-}
-
-
-@media (max-height: 1000px) {
-  .section1 {
-      min-height: 0vh;
-    }
-
-  .hero-top::before {
-    background-color: rgba(255, 255, 255, 0.45);
-  }
-}
-
-
-/* ==========================
-   MOBILE
-   ========================== */
-
-@media (max-width: 1080px) {
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav {
-    position: fixed;
-    top: 64px;
-    right: -100%;
-    width: 70%;
-    height: calc(100vh - 64px);
-    background: rgba(20, 22, 27, 0.95);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    transition: right 0.3s ease;
-  }
-
-  .nav.active {
-    right: 0;
-  }
-
-  .nav a {
-    font-size: 18px;
-  }
-
-  
-  .hero-top h1 {
-        font-size: 2rem;
-  }
-
-}
-@media (max-width: 1080px) {
-  .hero-top {
-    padding: 20px;
-  }
-
-  .hero-bottom {
-    padding: 20px;
-  }
-
-  .lead {
-    font-size: 18px;
-  }
-}
-
-
-@media (max-width: 1080px) {
-    .hero-top h1 {
-        font-size: 3rem;
-    }
-    .hero-bottom {
-        font-size: 1.6rem;
-        letter-spacing: 0.05em;
-    }
-    .herotitulos {
-      font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-top h1 {
-        font-size: 1.6rem;
-        letter-spacing: 0.05em;
-    }
-    .hero-bottom {
-        font-size: 1rem;
-        letter-spacing: 0.05em;
-    }
-    .herotitulos {
-      font-size: 1rem;
-    }
-}
 
 /* ==========================
    MENU HAMBURGUESA
@@ -512,8 +410,44 @@ html, body {
 }
 
 /* MOBILE */
+/* =========================
+   MOBILE CLEAN (<= 768px)
+   ========================= */
 @media (max-width: 768px) {
 
+  /* ===== RESET SCROLL ===== */
+  html, body {
+    overflow: auto;
+    height: auto;
+  }
+
+  main {
+    height: auto;
+  }
+
+  section {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  /* ===== TIPOGRAFÍA ===== */
+  body {
+    font-size: 15px;
+  }
+
+  .h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  /* ===== NAVBAR / MENU ===== */
   .menu-toggle {
     display: flex;
     z-index: 3000;
@@ -524,16 +458,18 @@ html, body {
     top: 64px;
     right: 0;
     width: 100%;
-    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
     background: #14161b;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
 
-    /* estado oculto */
     transform: translateX(100%);
     transition: transform 0.3s ease;
+
     z-index: 2500;
   }
 
@@ -541,7 +477,15 @@ html, body {
     transform: translateX(0);
   }
 
-  /* animación X */
+  .nav a {
+    font-size: 18px;
+  }
+
+  .navimg {
+    width: 70px;
+  }
+
+  /* ===== MENU ICON ANIMATION ===== */
   .menu-toggle.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
@@ -553,184 +497,53 @@ html, body {
   .menu-toggle.active span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
-}
 
-
-/* =====================================================
-   RESPONSIVE ADAPTATIVO – SIN ROMPER DESKTOP
-   ===================================================== */
-
-/* -------------------------
-   PANTALLAS BAJAS (notebooks)
-   ------------------------- */
-@media (max-height: 900px) {
-
-  .section1,
-  .section {
-    min-height: 90vh;
-  }
-
-  .hero-top::before {
-    background-color: rgba(255, 255, 255, 0.45);
-  }
-
-  .hero-bottom {
-    padding: clamp(16px, 4vh, 40px);
-  }
-}
-
-/* -------------------------
-   NOTEBOOKS Y LAPTOPS CHICAS
-   ------------------------- */
-@media (max-width: 1366px) {
-
-  .h1 {
-    font-size: clamp(36px, 5vw, 64px);
-  }
-
-  .hero-bottom {
-    font-size: 1.6rem;
-  }
-
-  .container {
-    width: min(1024px, 92%);
-  }
-}
-
-/* -------------------------
-   TABLETS (vertical)
-   ------------------------- */
-@media (max-width: 1024px) {
-
-  
-  body {
-    overflow-y: auto !important;
-  }
-
+  /* ===== HERO ===== */
   .hero-top {
-    padding: 24px;
-  }
-
-  .hero-bottom {
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .card,
-  .card_service {
-    padding: 18px;
-  }
-}
-
-/* -------------------------
-   MOBILE
-   ------------------------- */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 15px;
-  }
-
-  .section1,
-  .section {
-    padding: 80px 0 56px;
-  }
-
-  .h1 {
-    font-size: clamp(28px, 8vw, 40px);
-  }
-
-  .h2 {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-
-  .hero-top {
+    padding: 20px;
     text-align: center;
+  }
+
+  .hero-top h1 {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .herotitulos {
+    font-size: 1.2rem;
   }
 
   .hero-bottom {
     font-size: 1.1rem;
     padding: 20px;
+    line-height: 1.4;
   }
 
   .scroll-indicator {
     display: none;
   }
-}
 
-/* -------------------------
-   MOBILE CHICO
-   ------------------------- */
-@media (max-width: 480px) {
-
-  .hero-bottom {
-    font-size: 1rem;
-    padding: 16px;
+  /* ===== SECTIONS ===== */
+  .section,
+  .section1 {
+    padding: 80px 0 56px;
   }
 
-  .navimg {
-    width: 64px;
+  /* ===== GRID ===== */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== CARDS ===== */
+  .card,
+  .card_service {
+    padding: 18px;
   }
 
   .card_service img {
     width: 48px;
     height: 48px;
-  }
-}
-
-
-/* Tamaño base por defecto (monitores estándar) */
-html {
-  font-size: 16px;
-}
-
-/* Notebooks y pantallas con DPI más alto */
-@media (min-resolution: 1.25dppx) {
-  html {
-    font-size: 12px;
-  }
-  p {
-    font-size: 20px;
-  }
-  .section1 .container{
-    padding-bottom: 60px;
-  }
-}
-
-/* Pantallas muy densas (algunas laptops) */
-@media (min-resolution: 1.5dppx) {
-  html {
-    font-size: 13.5px;
-  }
-  p {
-    font-size: 20px;
-  }
-  .section1 .container{
-    padding-bottom: 60px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  html, body {
-    overflow: auto !important;
-    height: auto !important;
-  }
-  section {
-    height: auto !important;
-    min-height: 100dvh;
-  }
-
-  main {
-    height: auto !important;
   }
 
 }
