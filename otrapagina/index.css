@@ -2,6 +2,8 @@
    Base & tokens
    ========================== */
 :root {
+  --bg2: rgba(209, 209, 209, 0.5);
+  --text2: rgba(59, 59, 59, 0.5);
   --bg: #d1d1d1;
   --panel: #14161b;
   --text: #3b3b3b;
@@ -128,6 +130,51 @@ nav a:hover::after {
   grid-template-rows: 2fr;
   align-items: center;
 }
+
+.section2 {
+  min-height: 100svh;
+  padding: 64px 0 72px; /* deja espacio para la topbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin-img {
+  position: relative;
+  width: 70px;   /* tamaño del ícono */
+  height: 70px;
+}
+
+/* Ambas imágenes ocupan el mismo lugar */
+.linkedin-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+/* Imagen normal visible */
+.img-default {
+  opacity: 1;
+}
+
+/* Imagen hover oculta */
+.img-hover {
+  opacity: 0;
+}
+
+/* Hover */
+.linkedin:hover .img-default {
+  opacity: 0;
+}
+
+.linkedin:hover .img-hover {
+  opacity: 1;
+}
+
+
+
 .background1 {
   background: linear-gradient(to top, var(--muted) 5%, var(--bg) 50%);
 }
@@ -413,14 +460,14 @@ img {
 }
 
 .controlimg {
-  padding: 10px;
-  border-radius: 15px;
-  width: 60%;
-  height: 60%;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .controlprimerdiv{
   width: 40%;
+  font-size: larger;
 }
 
 .oculto{
@@ -433,10 +480,53 @@ img {
   align-items: center;
 }
 
-.posimg{
-  display: flex;
-  justify-content: center;
+
+.posimg {
+  position: relative;
+  width: 80%;         
+  border-radius: 16px;   
+  overflow: hidden;      
+  flex-shrink: 0;
 }
+
+
+.posimg img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* Capa de color */
+
+.posimg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--text2) 20%,
+    transparent 50%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.borderlan{
+  height: 100%;
+  align-content: end;
+  color: var(--primary);
+}
+
+.sobremirebajado{
+  margin: 0.5%;
+}
+
+.imagen-col {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+}
+
 
 /* Fade in de página */
 body {
@@ -644,4 +734,131 @@ html, body {
   transform: none !important;
   }
 }
+
+
+/* ==========================
+ABOUT – HERO CARD
+========================== */
+
+.about-hero {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.3)
+  );
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  color: var(--text);
+}
+
+/* Texto */
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  margin: 0;
+  font-size: clamp(32px, 3vw, 46px);
+}
+
+.about-text h2 {
+  margin: 10px 0 20px;
+  color: var(--primary-600);
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Botón */
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: var(--primary-600);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-btn:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Imagen */
+.about-image {
+  flex: 0.9;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+ABOUT – CARDS
+========================== */
+
+.about-cards {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-card {
+  padding: 24px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.about-card h3 {
+  margin-bottom: 10px;
+  color: var(--primary-600);
+}
+
+/* ==========================
+ABOUT – LINKEDIN
+========================== */
+
+.about-linkedin {
+  margin-top: 40px;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+``
 
