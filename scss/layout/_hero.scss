@@ -1,0 +1,12 @@
+.hero-top {
+  display: flex;
+  width: 100%; height: 100%;
+  position: relative;
+  align-items: center; justify-content: center;
+  text-align: center; flex-direction: column;
+  background: linear-gradient(to bottom, var(--primary-600) 0%, #7aa2ff 45%, var(--bg) 95%);
+  background-image: url("../otrapagina/resources/Designer.png");
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  overflow: hidden;
+}
+.hero-bottom { padding: 40px; max-width: 1300px; margin: 0 auto; font-size: 2.5rem; }

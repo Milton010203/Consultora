@@ -1,13 +1,6 @@
 * { box-sizing: border-box; }
-
-html, body {
-  height: 100%;
-}
-
-html {
-  scroll-behavior: auto;
-}
-
+html, body { height: 100%; }
+html { scroll-behavior: auto; }
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;

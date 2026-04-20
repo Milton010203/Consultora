@@ -1,12 +1,2 @@
-.menu-toggle {
-  width: 2rem;
-  height: 1.5rem;
-
-  span {
-    height: 0.187rem;
-  }
-}
-
-.nav {
-  gap: 1.25rem;
-}
+.menu-toggle { display: none; flex-direction: column; width: 32px; height: 24px; cursor: pointer; }
+.menu-toggle span { height: 3px; width: 100%; background: white; transition: all 0.3s ease; }
