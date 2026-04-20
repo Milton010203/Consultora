@@ -851,7 +851,7 @@ RESPONSIVE
 ========================== */
 
 @media (max-width: 900px) {
-  .about-hero {
+  .about-hero {                
     flex-direction: column;
     text-align: center;
   }
@@ -860,5 +860,4 @@ RESPONSIVE
     grid-template-columns: 1fr;
   }
 }
-``
 
