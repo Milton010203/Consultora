@@ -9,3 +9,20 @@ body {
   background: var(--bg);
   overflow-x: hidden;
 }
+
+html {
+  font-size: 100%; // equivale a 16px por defecto
+}
+h1 { font-size: 3rem; } // relativo al font-size base
+p { margin-bottom: 1.2em; }
+
+.hero-top { height: 90vh; } // ocupa 90% de la altura visible
+.container { width: 90%; max-width: 1120px; }
+
+
+@media (max-width: 1366px) {
+  body { font-size: 0.9rem; }
+  .hero-top h1 { font-size: 2.5rem; }
+}
+
+.herotitulos { font-size: 3.5rem; }
