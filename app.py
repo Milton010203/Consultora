@@ -28,6 +28,13 @@ def pages_static(filename):
         os.path.join(BASE_DIR, "pages"),
         filename
     )
+    
+@app.route("/css/<path:filename>")
+def css_static(filename):
+    return send_from_directory(
+        os.path.join(BASE_DIR, "css"),
+        filename
+    )
 
 # ===============================
 # 👉 RUTAS HTML
