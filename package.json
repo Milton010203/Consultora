@@ -2,10 +2,14 @@
   "name": "consultora",
   "version": "1.0.0",
   "scripts": {
-    "build-css": "sass scss/main.scss css/index.css --style=expanded",
-    "watch-css": "sass --watch scss/main.scss css/index.css --style=expanded"
+    "watch-css": "sass --watch scss:css --style=expanded",
+    "build-css": "sass scss:css --style=expanded",
+    "build": "npm run build-css",
+    "start": "gunicorn app:app"
   },
   "devDependencies": {
     "sass": "^1.77.0"
   }
 }
+
+
