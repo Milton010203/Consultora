@@ -24,3 +24,49 @@
 /* Fade in de página */
 body { opacity: 0; transition: opacity 0.6s ease; }
 body.page-loaded { opacity: 1; }
+
+/*backgrounds*/
+.backgroundd {
+  background:
+    /* borde superior completo */
+    linear-gradient(
+      to bottom,
+      var(--muted) 0%,
+      transparent 50%
+    ),
+
+    /* punta inferior derecha */
+    linear-gradient(
+      315deg,
+      var(--muted) 0%,
+      transparent 25%
+    );
+
+  background-color: var(--bg); /* color base */
+}
+
+.fondo2 {
+  background:
+    /* punta superior derecha */
+    linear-gradient(
+      225deg,
+      var(--muted) 0%,
+      transparent 25%
+    ),
+
+    /* punta inferior izquierda */
+    linear-gradient(
+      45deg,
+      var(--muted) 0%,
+      transparent 30%
+    ),
+
+    var(--bg); /* color base */
+
+  background-size: cover;
+}
+
+.backgroundd2 {
+  color: var(--text);
+  background-size: cover;
+}

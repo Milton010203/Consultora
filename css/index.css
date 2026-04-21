@@ -38,39 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  font-size: 100%;
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-p {
-  margin-bottom: 1.2em;
-}
-
-.hero-top {
-  height: 90vh;
-}
-
-.container {
-  width: 90%;
-  max-width: 1120px;
-}
-
-@media (max-width: 1366px) {
-  body {
-    font-size: 0.9rem;
-  }
-  .hero-top h1 {
-    font-size: 2.5rem;
-  }
-}
-.herotitulos {
-  font-size: 3.5rem;
-}
-
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -182,6 +149,22 @@ body.page-loaded {
   opacity: 1;
 }
 
+/*backgrounds*/
+.backgroundd {
+  background: linear-gradient(to bottom, var(--muted) 0%, transparent 50%), linear-gradient(315deg, var(--muted) 0%, transparent 25%);
+  background-color: var(--bg); /* color base */
+}
+
+.fondo2 {
+  background: linear-gradient(225deg, var(--muted) 0%, transparent 25%), linear-gradient(45deg, var(--muted) 0%, transparent 30%), var(--bg); /* color base */
+  background-size: cover;
+}
+
+.backgroundd2 {
+  color: var(--text);
+  background-size: cover;
+}
+
 .container {
   width: min(1120px, 90%);
   margin-inline: auto;
@@ -259,7 +242,7 @@ body.page-loaded {
   bottom: -5px;
   width: 100%;
   height: 2px;
-  background: black;
+  background: var(--bg);
   transform: translateX(-50%) scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -389,10 +372,6 @@ body.page-loaded {
   text-transform: uppercase;
   z-index: 10; /* asegura que quede por encima del fondo */
   pointer-events: none;
-}
-
-.scroll-indicator {
-  bottom: -40px; /* lo baja fuera del bloque de texto */
 }
 
 .grid {
@@ -798,6 +777,193 @@ body.page-loaded {
   .about-cards {
     grid-template-columns: 1fr;
   }
+}
+/* Ajustes para notebooks con escala 125% (≈1.25dppx) 
+1ERA PARTE INDEX*/
+@media (min-resolution: 1.25dppx) {
+  /* Tipografía */
+  body {
+    font-size: 0.9rem; /* reduce ligeramente para compensar el zoom */
+  }
+  .hero-top h1 {
+    font-size: 4.5rem; /* más chico que el 5rem original */
+    letter-spacing: 0.05em;
+  }
+  .herotitulos {
+    font-size: 1.4rem;
+  }
+  .hero-bottom {
+    font-size: 1.5rem;
+    padding: 2rem;
+    line-height: 1.4;
+  }
+  /* Navbar */
+  .nav a {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .navimg {
+    width: 80px; /* más grande para compensar la densidad */
+    height: auto;
+    object-fit: contain;
+    filter: none;
+  }
+  /* Secciones */
+  .section,
+  .section1 {
+    padding: 3.5rem 0 3rem;
+  }
+  /* Cards */
+  .card,
+  .card_service {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+  }
+  .card_service img {
+    width: 50px;
+    height: 50px;
+  }
+  /* Contenedor */
+  .container {
+    width: min(1080px, 92%);
+  }
+}
+/* Ajustes para pantallas con escala 150% (≈1.5dppx) */
+@media (min-resolution: 1.5dppx) {
+  body {
+    font-size: 0.85rem;
+  }
+  .hero-top h1 {
+    font-size: 2.5rem;
+  }
+  .herotitulos {
+    font-size: 1.2rem;
+  }
+  .hero-bottom {
+    font-size: 1.1rem;
+    padding: 1.8rem;
+  }
+  .navimg {
+    width: 85px;
+  }
+}
+/* Ajustes para notebooks con escala 125% (≈1.25dppx) */
+@media (min-resolution: 1.25dppx) {
+  /* Texto principal */
+  .about-text h1 {
+    font-size: 2rem;
+  }
+  .about-text h2 {
+    font-size: 1.2rem;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  /* Botón de contacto */
+  .about-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  /* Imagen de perfil */
+  .about-image img {
+    width: 90%;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  /* Contenedor general */
+  .about-hero {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  /* Cards de servicios */
+  .about-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  .about-card h3 {
+    font-size: 1rem;
+  }
+  /* Bloque LinkedIn */
+  .about-linkedin {
+    margin-top: 30px;
+    transform: scale(0.85); /* más chico */
+  }
+  .linkedin-img {
+    width: 55px;
+    height: 55px;
+  }
+}
+/* Ajustes para notebooks con escala 150% (≈1.5dppx) */
+@media (min-resolution: 1.5dppx) {
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+  .about-text h2 {
+    font-size: 1.1rem;
+  }
+  .about-text p {
+    font-size: 0.85rem;
+  }
+  .about-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .about-image img {
+    width: 85%;
+  }
+  .about-card {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+  }
+  .about-linkedin {
+    transform: scale(0.8);
+  }
+  .linkedin-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.about-linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.about-linkedin a {
+  display: inline-block;
+  line-height: 0;
+}
+
+.linkedin-img {
+  position: relative; /* clave: el contenedor es relativo */
+  width: 60px;
+  height: 60px;
+}
+
+.linkedin-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* Imagen hover superpuesta exactamente encima */
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.linkedin-img:hover .img-hover {
+  opacity: 1;
+}
+
+.linkedin-img:hover .img-default {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=index.css.map */
