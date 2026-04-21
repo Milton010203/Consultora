@@ -6,15 +6,26 @@ import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-
-
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
 # ===============================
 # 👉 SERVIR ARCHIVOS ESTÁTICOS
 # ===============================
+@app.route("/css/<path:filename>")
+def css_static(filename):
+    return send_from_directory(
+        os.path.join(BASE_DIR, "css"),
+        filename
+    )
+
+@app.route("/resources/<path:filename>")
+def resources_static(filename):
+    return send_from_directory(
+        os.path.join(BASE_DIR, "resources"),
+        filename
+    )
+
 @app.route("/otrapagina/<path:filename>")
 def otrapagina_static(filename):
     return send_from_directory(
@@ -26,13 +37,6 @@ def otrapagina_static(filename):
 def pages_static(filename):
     return send_from_directory(
         os.path.join(BASE_DIR, "pages"),
-        filename
-    )
-    
-@app.route("/css/<path:filename>")
-def css_static(filename):
-    return send_from_directory(
-        os.path.join(BASE_DIR, "css"),
         filename
     )
 
@@ -66,6 +70,7 @@ def sobremi():
         os.path.join(BASE_DIR, "pages"),
         "sobremi.html"
     )
+
 
 
 # ===============================
