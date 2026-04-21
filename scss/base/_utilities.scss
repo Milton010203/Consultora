@@ -1,62 +1,26 @@
-/* Utilidades generales */
-.fade-in { 
-  opacity: 0; 
-  transform: translateY(18px); 
-  transition: opacity .7s ease, transform .7s ease; 
-}
+.fade-in { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
 
-.oculto {
-  width: 100%;
-  height: 50%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-}
+.oculto { width: 100%; height: 50%; border-radius: 10px; display: flex; align-items: center; }
 
-.posimg {
-  position: relative;
-  width: 80%;
-  border-radius: 16px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
+.posimg { position: relative; width: 80%; border-radius: 16px; overflow: hidden; flex-shrink: 0; }
 .posimg img { display: block; max-width: 100%; }
-.posimg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, var(--text2) 20%, transparent 50%);
-  z-index: 1;
-  pointer-events: none;
-}
+.posimg::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--text2) 20%, transparent 50%); z-index: 1; pointer-events: none; }
 
 .seccionletraoscura { color: var(--text); }
 .div18px { padding-bottom: 18px; }
 .borderlan { height: 100%; align-content: end; color: var(--primary); }
 .sobremirebajado { margin: 0.5%; }
 
-.imagen-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+.imagen-col { display: flex; justify-content: center; align-items: center; }
 .controlimg { display: block; width: 100%; height: auto; }
 .controlprimerdiv { width: 40%; font-size: larger; }
 
-.asdasd { 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 40px;
-  font-size: 25px;
-}
+.asdasd { display: flex; justify-content: center; flex-wrap: wrap; text-align: center; padding: 40px; font-size: 25px; }
+
+.cambiardireccion { padding: 18px; display: flex; flex-direction: row; border-radius: 15px; align-items: center; background-color: rgba(147, 177, 250, 0.2); backdrop-filter: blur(5px); color: var(--text); transition: box-shadow 0.3s ease; }
+.cambiardireccion:hover { box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); }
 
 /* Fade in de página */
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+body { opacity: 0; transition: opacity 0.6s ease; }
 body.page-loaded { opacity: 1; }

@@ -1,5 +1,8 @@
 .grid { display: grid; gap: 18px; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.card { background: var(--bg); border: 1px solid var(--bg); border-radius: 14px; padding: 18px; color: var(--card); }
-.card_service { background: var(--bg); border-radius: 14px; padding: 20px; color: var(--text); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+@media (max-width: 900px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+.card { background: var(--bg); border: 1px solid var(--bg); border-radius: 14px; padding: 18px; color: var(--card); box-shadow: 0px 0px 5px var(--bg); }
+.card_service { background: var(--bg); border: 1px solid var(--bg); border-radius: 14px; padding: 20px; color: var(--text); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; font-size: 18px; }
+.card_service img { width: 56px; height: 56px; object-fit: contain; }
