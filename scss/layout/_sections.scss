@@ -1,0 +1,8 @@
+.section, .section1, .section2 {
+  min-height: 100svh;
+  padding: 64px 0 72px;
+  display: grid;
+  align-items: center;
+}
+.section2 { flex-direction: column; justify-content: center; }
+.background1 { background: linear-gradient(to top, var(--muted) 5%, var(--bg) 50%); }

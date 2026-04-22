@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { scroll-behavior: auto; }
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: var(--textlight);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
