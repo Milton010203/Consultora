@@ -1,0 +1,131 @@
+/* Desktop (default) */
+.tercerapagina-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* 🔥 Mobile */
+@media (max-width: 768px) {
+  .tercerapagina-cards {
+    flex-direction: column;
+  }
+
+  .tercerapagina-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tercerapagina-container {
+    padding: 0 16px;
+  }
+
+  .tercerapagina-content {
+    max-width: 100%;
+  }
+
+  .tercerapagina-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .tercerapagina-description {
+    font-size: 14px;
+  }
+
+  .tercerapagina-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .tercerapagina-cards {
+    gap: 15px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* SECCIÓN HERO */
+  .tercerapagina-section {
+    min-height: auto;
+    padding: 80px 0 40px;
+    justify-content: flex-start;
+  }
+
+  .tercerapagina-container {
+    padding: 0 20px;
+  }
+
+  .tercerapagina-content {
+    max-width: 100%;
+  }
+
+  .tercerapagina-subtitle {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .tercerapagina-title {
+    font-size: 30px;
+    line-height: 1.25;
+    margin-bottom: 15px;
+  }
+
+  .tercerapagina-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .tercerapagina-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* CARDS */
+  .tercerapagina-cards {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+
+  .tercerapagina-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .tercerapagina-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .tercerapagina-card-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .tercerapagina-card-text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+.tercerapagina-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.4)
+  );
+}
