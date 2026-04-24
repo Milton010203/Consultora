@@ -129,3 +129,12 @@
     rgba(0,0,0,0.4)
   );
 }
+
+
+@media (max-width: 768px) {
+  .about-section2grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
