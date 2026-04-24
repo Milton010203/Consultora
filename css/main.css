@@ -587,7 +587,7 @@ body {
 /* Card individual */
 .tercerapagina-card {
   background: var(--bg);
-  padding: 20px;
+  padding: 15px;
   border-radius: 12px;
   flex: 1;
   transition: 0.3s;
@@ -609,6 +609,7 @@ body {
   font-weight: bold;
   margin-bottom: 10px;
   color: #1f2937;
+  text-align: center;
 }
 
 /* Texto card */
@@ -626,6 +627,11 @@ body {
     flex-direction: column;
   }
 }
+.flexdirectioncolumn {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -690,6 +696,33 @@ body {
 
 .linkedin:hover .img-hover {
   opacity: 1;
+}
+
+.service-card-hide {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-card-hide.active {
+  transform: scale(1.02);
+}
+
+.service-content-hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.colorytextocentrado {
+  color: var(--text);
+  text-align: center;
+}
+
+.service-card-hide {
+  cursor: pointer;
+}
+
+.service-card-hide.active {
+  transform: scale(1.02);
 }
 
 .about-hero {

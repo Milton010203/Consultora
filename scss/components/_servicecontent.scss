@@ -1,0 +1,26 @@
+.service-card-hide {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-card-hide.active {
+  transform: scale(1.02);
+}
+
+.service-content-hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.colorytextocentrado{
+    color: var(--text);
+    text-align: center;
+}
+
+.service-card-hide {
+  cursor: pointer;
+}
+
+.service-card-hide.active {
+  transform: scale(1.02);
+}
