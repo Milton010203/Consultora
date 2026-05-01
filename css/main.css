@@ -734,6 +734,10 @@ body {
   transform: scale(1.02);
 }
 
+.margendediez {
+  margin: 0.5rem;
+}
+
 .about-hero {
   max-width: 1200px;
   padding: 40px;
